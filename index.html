@@ -5,10 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta property="wb:webmaster" content="a251d1936985929e" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+        <link type="text/css" href="stylesheets/csshake.min.css"  rel="stylesheet" media="all">
 
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,10 +16,68 @@
 
         <title>JQ&#39;Blog by jqyjqyjqy</title>
     </head>
+    <style>
 
+        h1
+        {
+            text-align: center;
+            font-family: cursive;
+            font-size: 100px;
+            font-weight: bold;
+            line-height: 100px;
+            letter-spacing: 5px;
+            color: #fff;
+            text-shadow: 
+            0px 0px 2px #686868,
+            0px 1px 1px #ddd,
+            0px 2px 1px #d6d6d6,
+            0px 3px 1px #ccc,
+            0px 4px 1px #c5c5c5,
+            0px 5px 1px #c1c1c1,
+            0px 6px 1px #bbb,
+            0px 7px 1px #777,
+            0px 8px 3px rgba(100, 100, 100, 0.4),
+            0px 9px 5px rgba(100, 100, 100, 0.1),
+            0px 10px 7px rgba(100, 100, 100, 0.15),
+            0px 11px 9px rgba(100, 100, 100, 0.2),
+            0px 12px 11px rgba(100, 100, 100, 0.25),
+            0px 13px 15px rgba(100, 100, 100, 0.3);
+            -webkit-transition: all .1s linear;
+            transition: all .1s linear;
+        }
+        h1:hover {
+            text-shadow: 
+            0px 0px 2px #686868,
+            0px 1px 1px #fff,
+            0px 2px 1px #fff,
+            0px 3px 1px #fff,
+            0px 4px 1px #fff,
+            0px 5px 1px #fff,
+            0px 6px 1px #fff,
+            0px 7px 1px #777,
+            0px 8px 3px #fff,
+            0px 9px 5px #fff,
+            0px 10px 7px #fff,
+            0px 11px 9px #fff,
+            0px 12px 11px #fff,
+            0px 13px 15px #fff;
+            -webkit-transition: all .1s linear;
+            transition: all .1s linear;
+        }
+        h2 {
+            text-align: center;
+            color: #666;
+            font-family: cursive;
+            font-size: 20px;
+            text-shadow: 0 1px 0 #fff;
+            letter-spacing: 1px;
+            line-height: 2em;
+            margin-top: 0px;
+        }
+    </style>
     <body>
         <header>
-        <div class="inner">
+        <div class="inner language-markup shake shake-little shake-constant" style="margin-left:180px">
             <h1>JQ&#39;Blog</h1>
             <h2>Free to Play</h2>
             <a href="https://github.com/jqyjqyjqy" class="button"><small>Follow me on</small>GitHub</a>
@@ -28,7 +86,7 @@
 
         <div id="content-wrapper">
             <div class="inner clearfix">
-                <section id="main-content">
+                <section id="main-content" class="language-markup shake shake-slow shake-constant">
                 <h3>
                     <a name="how-to-play" class="anchor" href="#how-to-play"><span class="octicon octicon-link"></span></a>How to Play</h3>
 
@@ -44,8 +102,7 @@
                     <small>share to</small>
                     Weibo
                 </a>--> 
-                <canvas id="myCanvas"  width=260px height=260px style="border:0px solid #c3c3c3;">your browser does not support the canvas tag </canvas>
-<iframe width="100%" height="300" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=300&fansRow=1&ptype=1&speed=300&skin=9&isTitle=0&noborder=1&isWeibo=0&isFans=0&uid=2280848044&verifier=b349771a&dpc=1"></iframe>
+                <iframe width="100%" height="300" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=300&fansRow=1&ptype=1&speed=300&skin=9&isTitle=0&noborder=1&isWeibo=0&isFans=0&uid=2280848044&verifier=b349771a&dpc=1"></iframe>
 
                 <table>
                     <tr>
@@ -82,66 +139,15 @@
                                 js.src = "http://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v2.0";
                                 fjs.parentNode.insertBefore(js, fjs);
                             }(document, 'script', 'facebook-jssdk'));
-                            </script>
-                        </td>
-                    </tr>
-                </table>
-        <script type="text/javascript" >
-            var canvas=document.getElementById('myCanvas');
-            var ctx=canvas.getContext('2d');//获取变量操作入口
-            jq();
-            function jq(){
-                this.date = new Date();
-                this.s = this.date.getSeconds();
-                var num1 = Math.floor(50*Math.random())+1;
-                var num2 = Math.floor(50*Math.random())+1;
-                ctx.clearRect(0,0,260,260);
-                begin(num1, num2);
-                show(num1, num2);
-                var self = this
-                    setTimeout(function(){
-                            self.jq();
-                            },500);//设置时间间隔
-            }
-            function begin(num1, num2) {
-                ctx.beginPath();
-                ctx.arc(100 + num1,105 + num2,95,0,2*Math.PI);//圆:(x,y,r,起始角，结束角，顺/逆)
-                ctx.stroke();
-            }
-            function show(num1,num2){
-                ctx.strokeStyle="#2B6DDA";
-                ctx.lineWidth=5;
-                ctx.moveTo(10 + num1,100 + num2);//起始点
-                ctx.lineTo(100 + num1,10 + num2);//往**连一点
-                ctx.lineTo(190 + num1,100 + num2);
-            
-                ctx.moveTo(70 + num1,65 + num2);
-                ctx.lineTo(130 + num1,65 + num2);
-            
-                ctx.moveTo(65 + num1,105 + num2);
-                ctx.lineTo(135 + num1,105 + num2);
-            
-                ctx.moveTo(30 + num1,155 + num2);
-                ctx.lineTo(170 + num1,155 + num2);
-            
-                ctx.moveTo(100 + num1,65 + num2);
-                ctx.lineTo(100 + num1,155 + num2);
-            
-                ctx.moveTo(60 + num1,120 + num2);
-                ctx.lineTo(90 + num1,155 + num2);
-            
-                ctx.moveTo(140 + num1,120 + num2);
-                ctx.lineTo(110 + num1,155 + num2);
-            
-                ctx.stroke();//绘制已定义的路径
-            }
-            
-            </script>
+                        </script>
+                    </td>
+                </tr>
+            </table>
 
-        </aside>
-      </div>
+            </aside>
+        </div>
     </div>
 
-  
-  </body>
+
+</body>
 </html>
